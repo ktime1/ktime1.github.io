@@ -47,8 +47,17 @@ Email: <input name="email" required="" size="60" type="email"/>
      email: email,
      name: fullname
    };
+  
+    var userId = 'test';
+    x = (Math.floor(Math.random() * 2) == 0);
+    if(x){
+      userId = '12345';
+    }else{
+      userId = '99999';
+    }
+  
 // Identify call
-    analytics.identify('12345', {
+    analytics.identify(userId, {
       email: email,
       name: fullname,
       shoeType: shoeType
@@ -57,51 +66,51 @@ Email: <input name="email" required="" size="60" type="email"/>
     analytics.track('user signed up', user, function() {
       window.location.href = "";
     });
-// // Ecommerce Events
-   // analytics.track('Products Searched', {
-   //  query: 'kith air force 1'
-   // });
+// Ecommerce Events
+   analytics.track('Products Searched', {
+    query: 'kith air force 1'
+   });
 
 
-   // analytics.track('Product List Viewed', {
-   //   list_id: 'hot_sneakers_2021',
-   //   category: 'Trendy',
-   //   products: [ {
-   //     product_id: '507f1f77bcf86cd799439011',
-   //     sku: '45790-32',
-   //     name: 'Air Jordan 4 - White / Military Blue - Fire Red',
-   //     price: 500.00,
-   //     position: 1,
-   //     category: 'Jordan',
-   //     url: 'https://www.example.com/product/path',
-   //     image_url: 'https://www.example.com/product/path.jpg'
-   //   }, {
-   //     product_id: '505bd76785ebb509fc183733',
-   //     sku: '46493-32',
-   //     name: 'Kith x Nike Air Force 1 “NYC”',
-   //     price: 1000.00,
-   //     position: 2,
-   //     category: 'Air Force 1'
-   // } ] });
+   analytics.track('Product List Viewed', {
+     list_id: 'hot_sneakers_2021',
+     category: 'Trendy',
+     products: [ {
+       product_id: '507f1f77bcf86cd799439011',
+       sku: '45790-32',
+       name: 'Air Jordan 4 - White / Military Blue - Fire Red',
+       price: 500.00,
+       position: 1,
+       category: 'Jordan',
+       url: 'https://www.example.com/product/path',
+       image_url: 'https://www.example.com/product/path.jpg'
+     }, {
+       product_id: '505bd76785ebb509fc183733',
+       sku: '46493-32',
+       name: 'Kith x Nike Air Force 1 “NYC”',
+       price: 1000.00,
+       position: 2,
+       category: 'Air Force 1'
+   } ] });
 
 
-   // analytics.track('Product Viewed', {
-   //   product_id: '507f1f77bcf86cd799439011',
-   //   sku: 'G-32',
-   //   category: 'Jordan',
-   //   name: 'Air Jordan 4 - White / Military Blue - Fire Red',
-   //   brand: 'Nike',
-   //   variant: 'November 2019',
-   //   price: 500.00,
-   //   quantity: 1,
-   //   coupon: 'First_Purchase',
-   //   currency: 'usd',
-   //   position: 2,
-   //   value: 500,
-   //   last_name: 'Bowerman',
-   //   url: 'https://www.example.com/product/path',
-   //   image_url: 'https://www.example.com/product/path.jpg'
-   // });
+//    analytics.track('Product Viewed', {
+//      product_id: '507f1f77bcf86cd799439011',
+//      sku: 'G-32',
+//      category: 'Jordan',
+//      name: 'Air Jordan 4 - White / Military Blue - Fire Red',
+//      brand: 'Nike',
+//      variant: 'November 2019',
+//      price: 500.00,
+//      quantity: 1,
+//      coupon: 'First_Purchase',
+//      currency: 'usd',
+//      position: 2,
+//      value: 500,
+//      last_name: 'Bowerman',
+//      url: 'https://www.example.com/product/path',
+//      image_url: 'https://www.example.com/product/path.jpg'
+//    });
 
 
    // analytics.track('Product Added', {
